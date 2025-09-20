@@ -18,12 +18,11 @@ export default function HeroSection() {
           </Badge>
           {/* Main Title */}
           <Heading level={2} className="mb-6" highlight="Share Knowledge">
-            Code, Create, and
+            공부를 기록하는 공간입니다.
           </Heading>
           <Description className="mb-12 max-w-3xl mx-auto">
-            코드 한 줄부터 시스템 설계까지
-            신입 개발자의 성장을 돕는 실무 중심 기술 가이드
-            함께 배우고,&nbsp; 함께 성장하는 개발 여정
+            작은 배움이라도 꼼꼼히 기록해 나가는<br />
+            개발자의 성장을 돕는 기술 가이드를 작성합니다.
           </Description>
           <ButtonGroup>
             <CTAButton
@@ -35,7 +34,7 @@ export default function HeroSection() {
                 </svg>
               }
             >
-              Explore Articles
+              블로그 보러가기
             </CTAButton>
             <CTAButton
               href="/projects"
@@ -46,7 +45,7 @@ export default function HeroSection() {
                 </svg>
               }
             >
-              View Projects
+              제가 궁금하신가요?
             </CTAButton>
           </ButtonGroup>
         </div>
