@@ -73,7 +73,7 @@ export function Heading({
       {highlight ? (
         <>
           {children}
-          <span className="block text-pink-primary">{highlight}</span>
+          <span className="block text-pink-500">{highlight}</span>
         </>
       ) : (
         children
