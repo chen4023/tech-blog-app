@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import { gmarketSans } from '@/lib/fonts'
 
 export const metadata: Metadata = {
   title: 'TechBlog - Latest in Technology',
@@ -22,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="ko" className={gmarketSans.variable}>
+      <body className={gmarketSans.className}>
         {children}
       </body>
     </html>

@@ -8,15 +8,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        "pink-primary": "#ec4899",
-        "pink-light": "#f9a8d4",
-        "pink-hover": "#db2777",
-        "pink-dark": "#be185d",
+      fontFamily: {
+        sans: [
+          "var(--font-gmarket-sans)",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Apple SD Gothic Neo",
+          "Noto Sans KR",
+          "Malgun Gothic",
+          "sans-serif",
+        ],
+      },
+      fontWeight: {
+        light: "300",
+        medium: "500",
+        bold: "700",
       },
     },
   },
-  plugins: [],
 };
 
 export default config;
