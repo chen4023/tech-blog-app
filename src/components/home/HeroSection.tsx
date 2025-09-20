@@ -7,19 +7,23 @@ import { Badge, Heading, Description, CTAButton, ButtonGroup } from '@/component
 export default function HeroSection() {
   return (
     <section className="relative bg-gradient-to-br from-pink-50 via-white to-purple-50 py-24">
+      {/* Background Image Placeholder */}
       <HeroGradient />
+
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="text-center max-w-4xl mx-auto">
           {/* Welcome Badge */}
           <Badge className="mb-6">
             Welcome to TechBlog
           </Badge>
-          <Heading level={1} className="mb-6" highlight="Share Knowledge">
+          {/* Main Title */}
+          <Heading level={2} className="mb-6" highlight="Share Knowledge">
             Code, Create, and
           </Heading>
           <Description className="mb-12 max-w-3xl mx-auto">
-            Discover in-depth tutorials, project showcases, and technical insights that
-            help developers build better software and advance their careers.
+            코드 한 줄부터 시스템 설계까지
+            신입 개발자의 성장을 돕는 실무 중심 기술 가이드
+            함께 배우고,&nbsp; 함께 성장하는 개발 여정
           </Description>
           <ButtonGroup>
             <CTAButton
