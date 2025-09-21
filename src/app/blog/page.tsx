@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Footer, Pagination, BlogControls, ViewMode } from '@/components/common'
+import { Pagination, BlogControls, ViewMode } from '@/components/common'
 import BlogSidebar from '@/components/blog/BlogSidebar'
 import { ArticleCard } from '@/components/common/card'
 import { blogArticles } from '@/mock/blog-post'
@@ -69,8 +69,6 @@ export default function BlogPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }

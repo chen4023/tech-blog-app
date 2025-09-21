@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { gmarketSans } from '@/lib/fonts'
-import { Header } from '@/components/common'
+import { Footer, Header } from '@/components/common'
 
 export const metadata: Metadata = {
   title: 'TechBlog - Latest in Technology',
@@ -29,6 +29,7 @@ export default function RootLayout({
       <body className={gmarketSans.className}>
         {children}
       </body>
+      <Footer />
     </html>
   )
 }

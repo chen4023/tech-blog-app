@@ -7,7 +7,6 @@ import SidebarTOC from '@/components/blog/SidebarTOC'
 import AuthorCard from '@/components/blog/AuthorCard'
 import RelatedArticles from '@/components/blog/RelatedArticles'
 import CommentsSection from '@/components/blog/CommentsSection'
-import Footer from '@/components/common/Footer'
 
 // Sample article data
 const articleData = {
@@ -284,8 +283,6 @@ export default function BlogDetailPage() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

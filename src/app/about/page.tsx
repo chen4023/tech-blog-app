@@ -1,4 +1,3 @@
-import Footer from '@/components/common/Footer'
 import AboutHero from '@/components/about/AboutHero'
 import WorkExperience from '@/components/about/WorkExperience'
 import FeaturedProjects from '@/components/about/FeaturedProjects'
@@ -15,7 +14,6 @@ export default function AboutPage() {
       <EducationCertifications />
       <AchievementsAwards />
       <AboutCTA />
-      <Footer />
     </div>
   )
 }

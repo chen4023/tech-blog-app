@@ -1,4 +1,3 @@
-import Footer from '@/components/common/Footer'
 import AnalyticsHeader from '@/components/analytics/AnalyticsHeader'
 import StatsCard from '@/components/analytics/StatsCard'
 import VisitorTrendsChart from '@/components/analytics/VisitorTrendsChart'
@@ -84,7 +83,6 @@ export default function AnalyticsPage() {
         </div>
       </main>
 
-      <Footer />
     </div>
   )
 }
