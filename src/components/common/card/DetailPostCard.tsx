@@ -1,35 +1,16 @@
-// FeaturePostCard.tsx
 import React from "react";
 import { BaseCard } from "./BaseCard";
 import EmptyImage from "../EmptyImage";
+import { BasePostCardProps, Author, Stats } from "./types";
 
-type Author = { name: string; avatarUrl?: string; sub?: string }; // ex) 날짜
-type Stats = { views?: number; likes?: number; comments?: number };
-
-type Size = "simple" | "detail"; // 두 가지만
-
-export type FeaturePostCardProps = {
-  key: string;
-  size?: Size;
-  href?: string;               // 카드 전체 링크 (있으면 <a>)
-  image?: string;
-  imageAlt?: string;
-  category?: string;           // 좌측 뱃지
-  readTime?: string;           // 우측 메타
-  title: string;
-  description?: string;
+type DetailPostCardProps = BasePostCardProps & {
   tags?: string[];             // detail에서만 노출
   author?: Author;             // detail에서만 강조
   stats?: Stats;               // detail에서만 강조
-  date?: string;               // simple/footer용 또는 author.sub 대용
-  ctaLabel?: string;           // 버튼/링크 라벨
-  onClickCTA?: () => void;     // 버튼형 CTA가 필요할 때만
-  className?: string;
 };
 
-export function FeaturePostCard({
+export function DetailPostCard({
   key,
-  size = "simple",
   href,
   image,
   imageAlt,
@@ -41,12 +22,10 @@ export function FeaturePostCard({
   author,
   stats,
   date,
-  ctaLabel = size === "detail" ? "Read Article" : "Read More",
+  ctaLabel = "Read Article",
   onClickCTA,
   className,
-}: FeaturePostCardProps) {
-  const isDetail = size === "detail";
-
+}: DetailPostCardProps) {
   return (
     <BaseCard
       as={href ? "a" : "div"}
@@ -57,9 +36,6 @@ export function FeaturePostCard({
     >
       {/* Media */}
       {image && (
-        // <div className="w-full aspect-[16/9] bg-slate-100">
-        //   <img src={image} alt={imageAlt ?? title} className="w-full h-full object-cover" />
-        // </div>
         <EmptyImage />
       )}
 
@@ -75,36 +51,36 @@ export function FeaturePostCard({
                 </span>
               )}
             </div>
-            {readTime && <span className="whitespace-nowrap">{isDetail ? `⏱ ${readTime}` : readTime}</span>}
+            {readTime && <span className="whitespace-nowrap">⏱ {readTime}</span>}
           </div>
         )}
 
         {/* Title & Description */}
-        <h3 className="text-xl font-semibold text-slate-900 leading-snug">
+        <h3 className="text-lg font-semibold text-slate-900 leading-snug">
           {title}
         </h3>
         {description && (
-          <p className={`mt-2 text-slate-600 text-sm ${isDetail ? "line-clamp-3" : ""}`}>
+          <p className="mt-2 text-slate-600 text-sm line-clamp-3">
             {description}
           </p>
         )}
 
-        {/* Tags (detail 전용) */}
-        {isDetail && tags?.length ? (
+        {/* Tags */}
+        {tags?.length && (
           <div className="mt-3 flex flex-wrap gap-2">
-            {tags.map((t) => (
-              <span key={t} className="px-2 py-0.5 rounded-md text-xs bg-slate-100 text-slate-700">
-                #{t}
+            {tags.map((tag) => (
+              <span key={tag} className="px-2 py-0.5 rounded-md text-xs bg-slate-100 text-slate-700">
+                #{tag}
               </span>
             ))}
           </div>
-        ) : null}
+        )}
 
-        {/* Divider + Author/Stats (detail 전용) */}
-        {isDetail && (author || stats) && (
+        {/* Divider + Author/Stats */}
+        {(author || stats) && (
           <>
             <hr className="my-4 border-slate-200" />
-            <div className="pt-1 flex items-center justify-between text-sm text-slate-500">
+            <div className="pt-1 flex flex-col items-start gap-3 text-sm text-slate-500">
               {/* author/date */}
               <div className="flex items-center gap-2">
                 {author ? (
@@ -125,7 +101,6 @@ export function FeaturePostCard({
                   date && <span>{date}</span>
                 )}
               </div>
-
               {/* stats */}
               <div className="flex items-center gap-4">
                 {stats?.views != null && <span>👁 {stats.views.toLocaleString()}</span>}
@@ -138,25 +113,14 @@ export function FeaturePostCard({
 
         {/* Footer CTA */}
         <div className="mt-auto pt-6">
-          {isDetail ? (
-            <button
-              type="button"
-              onClick={onClickCTA}
-              className={href ? "pointer-events-none w-full rounded-xl border border-slate-200 py-3 font-semibold" :
-                "w-full rounded-xl border border-slate-200 py-3 font-semibold"}
-            >
-              {ctaLabel} <span aria-hidden>›</span>
-            </button>
-          ) : (
-            <div className="flex justify-between items-center mt-auto mb-2">
-              {date && <p className="text-slate-500 text-sm">{date}</p>}
-              <span className={href ? "text-pink-500 text-sm font-medium inline-flex items-center gap-1" :
-                "text-pink-500 text-sm font-medium inline-flex items-center gap-1 cursor-pointer"}
-                onClick={!href ? onClickCTA : undefined}>
-                {ctaLabel} <span aria-hidden>›</span>
-              </span>
-            </div>
-          )}
+          <button
+            type="button"
+            onClick={onClickCTA}
+            className={href ? "pointer-events-none w-full rounded-xl border border-slate-200 py-3 font-medium" :
+              "w-full rounded-xl border border-slate-200 py-3 font-medium"}
+          >
+            {ctaLabel} <span aria-hidden>›</span>
+          </button>
         </div>
       </div>
     </BaseCard>
