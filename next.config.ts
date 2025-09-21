@@ -3,14 +3,16 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // 성능 최적화 설정
   experimental: {
-    optimizeCss: true, // CSS 최적화
+    // optimizeCss: true, // CSS 최적화 비활성화 (critters 오류 해결)
     optimizePackageImports: ["@/components/icons"], // 아이콘 패키지 최적화
-    turbo: {
-      rules: {
-        "*.svg": {
-          loaders: ["@svgr/webpack"],
-          as: "*.js",
-        },
+  },
+
+  // Turbopack 설정 (deprecated 경고 해결)
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
       },
     },
   },
