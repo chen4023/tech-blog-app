@@ -28,13 +28,6 @@ const NewsletterSection = dynamic(
   }
 )
 
-const Footer = dynamic(
-  () => import('@/components/common/Footer'),
-  {
-    loading: () => <div className="h-32 bg-gray-100 animate-pulse"></div>
-  }
-)
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
@@ -42,7 +35,6 @@ export default function Home() {
       <FeaturedArticlesSection />
       <CategoriesSection />
       <NewsletterSection />
-      <Footer />
     </main>
   )
 }

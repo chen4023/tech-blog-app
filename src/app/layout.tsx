@@ -28,11 +28,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={gmarketSans.variable}>
-      <Header />
       <body className={gmarketSans.className}>
+        <Header />
         {children}
+        <Footer />
       </body>
-      <Footer />
     </html>
   )
 }
