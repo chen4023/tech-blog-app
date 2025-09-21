@@ -18,6 +18,7 @@ export default function AboutHero() {
                 className="w-full h-full object-cover"
                 width={176}
                 height={176}
+                priority={true}
               />
             </div>
             {/* Online Status Indicator */}
