@@ -134,8 +134,8 @@ export function CTAButton({
       href={href}
       className={`inline-flex items-center px-8 py-4 rounded-lg font-medium text-lg transition-colors ${variantClasses[variant]} ${className}`}
     >
-      {icon && <span className="mr-2">{icon}</span>}
       {children}
+      {icon && <span className="ml-3">{icon}</span>}
     </Link>
   )
 }
