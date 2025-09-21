@@ -125,7 +125,7 @@ export function CTAButton({
   className = ''
 }: CTAButtonProps) {
   const variantClasses = {
-    primary: 'bg-pink-500 text-white hover:bg-pink-hover',
+    primary: 'bg-pink-500 text-white hover:bg-pink-600',
     secondary: 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200'
   }
 

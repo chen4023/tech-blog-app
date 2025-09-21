@@ -1,6 +1,3 @@
-'use client'
-
-import Link from 'next/link'
 import { HeroGradient } from '@/components/common/GradientBackground'
 import { Badge, Heading, Description, CTAButton, ButtonGroup } from '@/components/common/Text'
 
@@ -37,7 +34,7 @@ export default function HeroSection() {
               블로그 보러가기
             </CTAButton>
             <CTAButton
-              href="/projects"
+              href="/about"
               variant="secondary"
               icon={
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
