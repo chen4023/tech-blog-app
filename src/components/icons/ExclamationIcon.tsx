@@ -1,8 +1,8 @@
 import React from 'react';
 
-type CodeIconProps = React.SVGProps<SVGSVGElement>;
+type ExclamationIconProps = React.SVGProps<SVGSVGElement>;
 
-export function CodeIcon(props: CodeIconProps) {
+export function ExclamationIcon(props: ExclamationIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@ export function CodeIcon(props: CodeIconProps) {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
       />
     </svg>
   );

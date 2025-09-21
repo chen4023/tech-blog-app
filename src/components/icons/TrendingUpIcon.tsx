@@ -1,8 +1,8 @@
 import React from 'react';
 
-type CodeIconProps = React.SVGProps<SVGSVGElement>;
+type TrendingUpIconProps = React.SVGProps<SVGSVGElement>;
 
-export function CodeIcon(props: CodeIconProps) {
+export function TrendingUpIcon(props: TrendingUpIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@ export function CodeIcon(props: CodeIconProps) {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
       />
     </svg>
   );
