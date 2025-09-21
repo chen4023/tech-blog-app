@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { FeaturedPostCard } from '../common/card'
 import { featuredPosts } from '@/mock/feature-post'
 import { CTAButton, Heading } from '../common/Text'
