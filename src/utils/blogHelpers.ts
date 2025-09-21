@@ -31,9 +31,8 @@ type MockArticle = {
  */
 export function mapArticleToCardProps(
   article: MockArticle
-): DetailPostCardProps {
+): Omit<DetailPostCardProps, "key"> {
   return {
-    key: article.id.toString(),
     title: article.title,
     description: article.description,
     category: article.category,
@@ -54,6 +53,6 @@ export function mapArticleToCardProps(
  */
 export function mapArticlesToCardProps(
   articles: MockArticle[]
-): DetailPostCardProps[] {
+): Omit<DetailPostCardProps, "key">[] {
   return articles.map(mapArticleToCardProps);
 }

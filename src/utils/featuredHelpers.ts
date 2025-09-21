@@ -19,9 +19,8 @@ type SimplePostCardProps = BasePostCardProps;
  */
 export function mapFeaturedPostToCardProps(
   post: FeaturedPost
-): SimplePostCardProps {
+): Omit<SimplePostCardProps, "key"> {
   return {
-    key: post.id.toString(),
     title: post.title,
     description: post.description,
     category: post.category,
@@ -38,6 +37,6 @@ export function mapFeaturedPostToCardProps(
  */
 export function mapFeaturedPostsToCardProps(
   posts: FeaturedPost[]
-): SimplePostCardProps[] {
+): Omit<SimplePostCardProps, "key">[] {
   return posts.map(mapFeaturedPostToCardProps);
 }
