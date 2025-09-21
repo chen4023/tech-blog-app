@@ -7,7 +7,7 @@ export const featuredPosts = [
     category: "React",
     readTime: "8분 읽기",
     date: "2024년 12월 15일",
-    // image: "/api/placeholder/400/200", // 외부 API 호출 제거
+    image: "default", // 외부 API 호출 제거
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const featuredPosts = [
     category: "CSS",
     readTime: "12분 읽기",
     date: "2024년 12월 12일",
-    // image: "/api/placeholder/400/200", // 외부 API 호출 제거
+    image: "default", // 외부 API 호출 제거
   },
   {
     id: 3,
@@ -27,6 +27,6 @@ export const featuredPosts = [
     category: "Backend",
     readTime: "15분 읽기",
     date: "2024년 12월 10일",
-    // image: "/api/placeholder/400/200", // 외부 API 호출 제거
+    image: "default", // 외부 API 호출 제거
   },
 ];
