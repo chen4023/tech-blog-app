@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface ContactItemProps {
   icon: React.ReactNode
   title: string
@@ -111,10 +113,12 @@ export default function ContactInfo() {
       {/* Profile Card */}
       <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 text-center">
         <div className="w-32 h-32 bg-slate-200 rounded-full mx-auto mb-6 overflow-hidden">
-          <img
+          <Image
             src="/api/placeholder/128/128"
             alt="Alex Chen"
             className="w-full h-full object-cover"
+            width={128}
+            height={128}
           />
         </div>
         <h3 className="text-xl font-semibold text-slate-900 mb-2">

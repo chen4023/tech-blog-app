@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from "next/image"
 
 interface RelatedArticlesProps {
   articles: Array<{
@@ -24,10 +25,12 @@ export default function RelatedArticles({ articles }: RelatedArticlesProps) {
             className="block group"
           >
             <div className="rounded-lg overflow-hidden mb-3">
-              <img
+              <Image
                 src={article.image}
                 alt={article.title}
                 className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                width={302}
+                height={170}
               />
             </div>
             <h4 className="font-medium text-slate-900 group-hover:text-pink-600 transition-colors mb-1">

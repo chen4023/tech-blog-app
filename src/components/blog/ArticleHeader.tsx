@@ -1,5 +1,7 @@
 'use client'
 
+import Image from "next/image"
+
 interface ArticleHeaderProps {
   article: {
     title: string
@@ -45,10 +47,12 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
         {/* Author Info */}
         <div className="flex items-center space-x-4 mb-4 sm:mb-0">
-          <img
+          <Image
             src={article.author.avatar}
             alt={article.author.name}
             className="w-12 h-12 rounded-full object-cover"
+            width={48}
+            height={48}
           />
           <div>
             <h3 className="font-semibold text-slate-900">{article.author.name}</h3>
@@ -96,10 +100,12 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
 
       {/* Featured Image */}
       <div className="mb-8">
-        <img
+        <Image
           src={article.image}
           alt={article.title}
           className="w-full h-96 object-cover rounded-lg"
+          width={1000}
+          height={400}
         />
       </div>
     </header>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from "next/image"
 
 interface CommentsSectionProps {
   comments: Array<{
@@ -70,10 +71,12 @@ export default function CommentsSection({ comments }: CommentsSectionProps) {
       <div className="space-y-6">
         {comments.map((comment) => (
           <div key={comment.id} className="flex space-x-4">
-            <img
+            <Image
               src={comment.author.avatar}
               alt={comment.author.name}
               className="w-12 h-12 rounded-full object-cover"
+              width={48}
+              height={48}
             />
             <div className="flex-1">
               <div className="bg-slate-50 rounded-lg p-4">

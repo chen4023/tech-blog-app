@@ -1,5 +1,7 @@
 'use client'
 
+import Image from "next/image"
+
 interface AuthorCardProps {
   author: {
     name: string
@@ -19,10 +21,12 @@ export default function AuthorCard({ author }: AuthorCardProps) {
       <h3 className="font-semibold text-slate-900 mb-4">About the Author</h3>
 
       <div className="flex items-start space-x-4 mb-4">
-        <img
+        <Image
           src={author.avatar}
           alt={author.name}
           className="w-16 h-16 rounded-full object-cover"
+          width={64}
+          height={64}
         />
         <div className="flex-1">
           <h4 className="font-semibold text-slate-900 mb-2">{author.name}</h4>
