@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import Link from 'next/link'
 // Badge 컴포넌트
 interface BadgeProps {
@@ -63,7 +63,7 @@ export function Heading({
   }
 
   const finalSize = size ? sizeClasses[size] : defaultSizes[level]
-  const Tag = `h${level}` as keyof JSX.IntrinsicElements
+  const Tag = `h${level}` as keyof React.JSX.IntrinsicElements
 
   return (
     <Tag className={`font-bold text-slate-900 leading-tight ${finalSize} ${className}`}>
