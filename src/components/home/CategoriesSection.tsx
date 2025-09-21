@@ -75,14 +75,14 @@ export default function CategoriesSection() {
             Explore by Category
           </h2>
           <p className="text-lg text-slate-600">
-            Browse articles by technology and topic to find exactly what you're looking for.
+            기술과 주제별로 아티클을 탐색하여 원하는 것을 찾아보세요.
           </p>
         </div>
 
         {/* Categories Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {categories.map((category, index) => (
-            <Link 
+            <Link
               key={index}
               href={`/categories/${category.name.toLowerCase()}`}
               className="bg-white border border-slate-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow group"

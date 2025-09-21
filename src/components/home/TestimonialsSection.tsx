@@ -28,10 +28,10 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Loved by developers worldwide
+            개발자들과 기업들이 TechFlow에 대해 어떻게 말하고 있는지 확인해보세요.
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See what our community of developers and companies are saying about TechFlow.
+            개발자들과 기업들이 TechFlow에 대해 어떻게 말하고 있는지 확인해보세요.
           </p>
         </div>
 

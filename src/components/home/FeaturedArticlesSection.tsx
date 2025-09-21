@@ -1,33 +1,34 @@
 'use client'
 
 import Link from 'next/link'
+import ArticleCard from '../common/card/ArticleCard'
 
 const articles = [
   {
     id: 1,
-    title: "Building Scalable React Applications with TypeScript",
-    description: "Learn how to structure large React applications using TypeScript, best practices for component architecture, and advanced patterns for maintainable code.",
+    title: "TypeScript로 확장 가능한 React 애플리케이션 구축하기",
+    description: "TypeScript를 사용하여 대규모 React 애플리케이션을 구조화하고, 컴포넌트 아키텍처의 모범 사례, 유지 보수가 용이한 코드를 위한 고급 패턴을 배워보세요.",
     category: "React",
-    readTime: "8 min read",
-    date: "Dec 15, 2024",
+    readTime: "8분 읽기",
+    date: "2024년 12월 15일",
     image: "/api/placeholder/400/200"
   },
   {
     id: 2,
-    title: "Mastering CSS Grid: From Basics to Advanced Layouts",
-    description: "Deep dive into CSS Grid with practical examples, responsive design patterns, and real-world layout solutions that will elevate your frontend skills.",
+    title: "CSS Grid 마스터하기: 기초부터 고급 레이아웃까지",
+    description: "실용적인 예제, 반응형 디자인 패턴, 실제 세계의 레이아웃 솔루션을 통해 CSS Grid를 깊이 있게 배워보세요.",
     category: "CSS",
-    readTime: "12 min read",
-    date: "Dec 12, 2024",
+    readTime: "12분 읽기",
+    date: "2024년 12월 12일",
     image: "/api/placeholder/400/200"
   },
   {
     id: 3,
-    title: "API Design Best Practices for Modern Web Applications",
-    description: "Comprehensive guide to designing RESTful APIs, handling authentication, error management, and documentation strategies for better developer experience.",
+    title: "현대 웹 애플리케이션을 위한 API 디자인 모범 사례",
+    description: "RESTful API 디자인, 인증, 에러 관리, 문서화 전략을 통해 개발자 경험을 향상시키는 종합 가이드를 배워보세요.",
     category: "Backend",
-    readTime: "15 min read",
-    date: "Dec 10, 2024",
+    readTime: "15분 읽기",
+    date: "2024년 12월 10일",
     image: "/api/placeholder/400/200"
   }
 ]
@@ -42,65 +43,30 @@ export default function FeaturedArticlesSection() {
             Featured Articles
           </h2>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            Dive into our most popular and recent articles covering the latest in web
-            development, programming best practices, and technology trends.
+            웹 개발, 프로그래밍 모범 사례, 기술 트렌드에 관한 가장 인기있고 최신 아티클을 만나보세요.
           </p>
         </div>
 
         {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {articles.map((article) => (
-            <article key={article.id} className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-              {/* Article Image */}
-              <div className="h-48 bg-slate-200 flex items-center justify-center">
-                <div className="text-slate-500 text-sm">Article Image</div>
-              </div>
-
-              {/* Article Content */}
-              <div className="p-6">
-                {/* Category and Read Time */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 bg-pink-50 text-pink-500 rounded-lg text-xs font-medium">
-                    {article.category}
-                  </span>
-                  <span className="text-slate-500 text-xs">
-                    {article.readTime}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-slate-900 mb-3 leading-tight">
-                  {article.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                  {article.description}
-                </p>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between">
-                  <span className="text-slate-500 text-xs">
-                    {article.date}
-                  </span>
-                  <Link 
-                    href={`/articles/${article.id}`}
-                    className="inline-flex items-center text-pink-500 text-sm font-medium hover:text-pink-600 transition-colors"
-                  >
-                    Read More
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </article>
+            <ArticleCard
+              key={article.id}
+              id={article.id}
+              title={article.title}
+              description={article.description}
+              category={article.category}
+              readTime={article.readTime}
+              date={article.date}
+              image={article.image}
+              href={`/blog/${article.id}`}
+            />
           ))}
         </div>
 
         {/* View All Button */}
         <div className="text-center">
-          <Link 
+          <Link
             href="/articles"
             className="inline-flex items-center px-8 py-4 bg-slate-100 text-slate-700 rounded-lg font-medium text-lg hover:bg-slate-200 transition-colors border border-slate-200"
           >

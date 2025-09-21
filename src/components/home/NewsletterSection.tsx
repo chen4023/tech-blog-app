@@ -18,14 +18,14 @@ export default function NewsletterSection() {
 
           {/* Title */}
           <h2 className="text-3xl font-bold text-slate-900 mb-4">
-            Stay in the Loop
+            연락을 주고 싶으신가요?
           </h2>
 
           {/* Description */}
           <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-            Get the latest articles, tutorials, and tech insights delivered straight to your inbox.
+            최신 아티클, 튜토리얼, 기술 인사이트를 이메일로 받아보세요.
             <br />
-            Join over 5,000 developers who trust our weekly newsletter.
+            5,000명 이상의 개발자가 매주 구독하는 뉴스레터를 구독하세요.
           </p>
 
           {/* Email Form */}
@@ -38,13 +38,13 @@ export default function NewsletterSection() {
               className="flex-1 px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
             />
             <button className="bg-pink-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-pink-600 transition-colors">
-              Subscribe Now
+              연락하기
             </button>
           </div>
 
           {/* Privacy Notice */}
           <p className="text-sm text-slate-500">
-            No spam, unsubscribe at any time. Privacy policy applies.
+            스팸 메일 없음, 언제든 구독 취소 가능. 개인정보 보호정책이 적용됩니다.
           </p>
         </div>
       </div>
