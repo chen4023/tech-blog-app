@@ -7,6 +7,7 @@ import SidebarTOC from '@/components/blog/SidebarTOC'
 import AuthorCard from '@/components/blog/AuthorCard'
 import RelatedArticles from '@/components/blog/RelatedArticles'
 import CommentsSection from '@/components/blog/CommentsSection'
+import Link from 'next/link'
 
 // Sample article data
 const articleData = {
@@ -233,11 +234,11 @@ export default function BlogDetailPage() {
       <nav className="bg-slate-50 border-b border-slate-200 py-3">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center space-x-2 text-sm">
-            <a href="/" className="text-slate-600 hover:text-slate-900">Home</a>
+            <Link href="/" className="text-slate-600 hover:text-slate-900">Home</Link>
             <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-            <a href="/blog" className="text-slate-600 hover:text-slate-900">Blog</a>
+            <Link href="/blog" className="text-slate-600 hover:text-slate-900">Blog</Link>
             <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

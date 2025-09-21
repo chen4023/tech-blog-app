@@ -15,13 +15,13 @@ export default function AboutCTA() {
 
             {/* Main Heading */}
             <h2 className="text-4xl font-bold text-slate-900 mb-6">
-              Let's Work Together
+              Let${`'`}s Work Together
             </h2>
 
             {/* Description */}
             <div className="max-w-3xl mx-auto mb-12">
               <p className="text-lg text-slate-600 mb-4">
-                I'm currently available for full-time positions, freelance projects, and consulting opportunities.
+                I${`'`}m currently available for full-time positions, freelance projects, and consulting opportunities.
               </p>
               <p className="text-lg text-slate-600">
                 Always excited to work on innovative projects with passionate teams.
