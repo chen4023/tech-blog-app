@@ -16,7 +16,7 @@ export default function AnalyticsHeader() {
               Analytics Dashboard
             </h1>
             <p className="text-slate-600">
-              Monitor your blog's performance and engagement
+              Monitor your blogs{`'`} performance and engagement
             </p>
           </div>
 
@@ -33,11 +33,10 @@ export default function AnalyticsHeader() {
                 <button
                   key={period}
                   onClick={() => setSelectedPeriod(period)}
-                  className={`px-3 py-1 text-sm font-medium transition-colors ${
-                    selectedPeriod === period
-                      ? 'text-slate-900'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
+                  className={`px-3 py-1 text-sm font-medium transition-colors ${selectedPeriod === period
+                    ? 'text-slate-900'
+                    : 'text-slate-600 hover:text-slate-900'
+                    }`}
                 >
                   {period}
                 </button>
