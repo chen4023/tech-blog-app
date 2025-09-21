@@ -1,4 +1,3 @@
-import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
 import AnalyticsHeader from '@/components/analytics/AnalyticsHeader'
 import StatsCard from '@/components/analytics/StatsCard'
@@ -12,7 +11,6 @@ import RecentActivity from '@/components/analytics/RecentActivity'
 export default function AnalyticsPage() {
   return (
     <div className="min-h-screen bg-slate-50">
-      <Header />
       <AnalyticsHeader />
 
       <main className="max-w-7xl mx-auto px-6 py-8">

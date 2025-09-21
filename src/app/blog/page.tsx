@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Header, Footer, Pagination, BlogControls, ViewMode } from '@/components/common'
+import { Footer, Pagination, BlogControls, ViewMode } from '@/components/common'
 import BlogSidebar from '@/components/blog/BlogSidebar'
 import { ArticleCard } from '@/components/common/card'
 import { blogArticles } from '@/mock/blog-post'
@@ -24,7 +24,6 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <Header />
       <div className="max-w-7xl mx-auto px-6 py-8">
         <Heading level={3} className="text-2xl font-bold text-slate-900">All Articles</Heading>
       </div>

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Header from '@/components/common/Header'
 import ArticleHeader from '@/components/blog/ArticleHeader'
 import ArticleContent from '@/components/blog/ArticleContent'
 import SidebarTOC from '@/components/blog/SidebarTOC'
@@ -231,8 +230,6 @@ export default function BlogDetailPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-
       {/* Breadcrumb */}
       <nav className="bg-slate-50 border-b border-slate-200 py-3">
         <div className="max-w-7xl mx-auto px-6">
