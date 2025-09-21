@@ -2,6 +2,7 @@ import React from "react";
 import { BaseCard } from "./BaseCard";
 import EmptyImage from "../EmptyImage";
 import { BasePostCardProps, Author, Stats } from "./types";
+import Image from "next/image";
 
 type DetailPostCardProps = BasePostCardProps & {
   tags?: string[];             // detail에서만 노출
@@ -12,7 +13,6 @@ type DetailPostCardProps = BasePostCardProps & {
 export function DetailPostCard({
   href,
   image,
-  imageAlt,
   category,
   readTime,
   title,
@@ -85,7 +85,7 @@ export function DetailPostCard({
                 {author ? (
                   <>
                     {author.avatarUrl ? (
-                      <img src={author.avatarUrl} alt={author.name} className="w-7 h-7 rounded-full" />
+                      <Image src={author.avatarUrl} alt={author.name} className="w-7 h-7 rounded-full" width={28} height={28} />
                     ) : (
                       <div className="w-7 h-7 rounded-full bg-fuchsia-200 flex items-center justify-center text-slate-700 text-sm">
                         {author.name.at(0)}

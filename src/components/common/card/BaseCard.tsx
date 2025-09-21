@@ -41,8 +41,8 @@ export const BaseCard = React.forwardRef<HTMLElement, BaseCardProps>(
   ) => {
     return (
       <Comp
-        ref={ref as any}
-        href={href as any}
+        ref={ref}
+        href={href}
         className={cn(
           "bg-white border border-slate-200/70 overflow-hidden flex flex-col h-full",
           shadow[sh],

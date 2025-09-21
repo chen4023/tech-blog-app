@@ -2,7 +2,7 @@ import { cn } from "@/utils/style";
 import { cva } from "class-variance-authority";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "none";
   size?: "sm" | "md" | "lg";
 }
 const buttonVariants = cva(

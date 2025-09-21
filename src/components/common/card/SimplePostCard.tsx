@@ -8,7 +8,6 @@ type SimplePostCardProps = BasePostCardProps;
 export function SimplePostCard({
   href,
   image,
-  imageAlt,
   category,
   readTime,
   title,
