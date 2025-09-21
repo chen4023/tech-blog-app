@@ -17,7 +17,6 @@ type MockArticle = {
   date: string;
   author: {
     name: string;
-    avatar: string;
   };
   stats: {
     views: number;
@@ -25,7 +24,6 @@ type MockArticle = {
     comments: number;
   };
   tags: string[];
-  image: string;
 };
 
 /**
@@ -42,10 +40,8 @@ export function mapArticleToCardProps(
     readTime: article.readTime,
     date: article.date,
     tags: article.tags ?? [],
-    image: article.image,
     author: {
       name: article.author.name,
-      avatarUrl: article.author.avatar,
     },
     stats: article.stats,
     href: `/blog/${article.id}`,

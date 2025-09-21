@@ -12,7 +12,6 @@ type MockArticle = {
   date: string;
   author: {
     name: string;
-    avatar: string;
   };
   stats: {
     views: number;
@@ -20,7 +19,6 @@ type MockArticle = {
     comments: number;
   };
   tags: string[];
-  image: string;
 };
 
 interface ArticleCardProps {

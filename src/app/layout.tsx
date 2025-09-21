@@ -13,9 +13,12 @@ export const metadata: Metadata = {
     description: 'Discover the latest trends, insights, and innovations in the tech world',
     type: 'website',
   },
-  // 성능 최적화를 위한 추가 메타데이터
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
