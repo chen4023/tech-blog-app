@@ -31,7 +31,7 @@ export function Badge({
 interface HeadingProps {
   children: ReactNode
   level?: 1 | 2 | 3 | 4 | 5 | 6
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
   className?: string
   highlight?: string
 }
@@ -51,9 +51,6 @@ export function Heading({
     xl: 'text-xl',
     '2xl': 'text-2xl',
     '3xl': 'text-3xl',
-    '4xl': 'text-4xl',
-    '5xl': 'text-5xl',
-    '6xl': 'text-6xl'
   }
 
   const defaultSizes = {
