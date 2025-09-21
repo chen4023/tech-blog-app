@@ -25,5 +25,11 @@ interface FeaturedPostCardProps {
 export function FeaturedPostCard({ post, className }: FeaturedPostCardProps) {
   const cardProps = mapFeaturedPostToCardProps(post);
 
-  return <SimplePostCard {...cardProps} className={className} />;
+  return (
+    <SimplePostCard
+      key={post.id.toString()}
+      {...cardProps}
+      className={className}
+    />
+  );
 }

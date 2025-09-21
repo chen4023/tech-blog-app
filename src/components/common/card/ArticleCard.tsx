@@ -33,5 +33,11 @@ interface ArticleCardProps {
 export function ArticleCard({ article, className }: ArticleCardProps) {
   const cardProps = mapArticleToCardProps(article);
 
-  return <DetailPostCard {...cardProps} className={className} />;
+  return (
+    <DetailPostCard
+      key={article.id.toString()}
+      {...cardProps}
+      className={className}
+    />
+  );
 }

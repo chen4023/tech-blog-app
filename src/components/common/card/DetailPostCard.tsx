@@ -29,6 +29,7 @@ export function DetailPostCard({
   return (
     <BaseCard
       as={href ? "a" : "div"}
+      key={key}
       href={href}
       clickable
       padded={false} // 상단 이미지와 본문 패딩을 나누기 위해 false

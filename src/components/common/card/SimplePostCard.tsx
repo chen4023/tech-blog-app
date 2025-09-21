@@ -21,6 +21,7 @@ export function SimplePostCard({
 }: SimplePostCardProps) {
   return (
     <BaseCard
+      key={key}
       as={href ? "a" : "div"}
       href={href}
       clickable
