@@ -3,8 +3,35 @@
 import { useState, useEffect } from 'react'
 import Button from './Button'
 
+// 정적 SVG 아이콘을 컴포넌트 외부로 호이스팅
+const LightIcon = (
+  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+    />
+  </svg>
+)
+
+const DarkIcon = (
+  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+    />
+  </svg>
+)
+
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'light' | 'dark' | 'system'>('system')
+  // Lazy state initialization - localStorage 접근을 초기화 시에만
+  const [theme, setTheme] = useState<'light' | 'dark' | 'system'>(() => {
+    if (typeof window === 'undefined') return 'system'
+    return (localStorage.getItem('theme') as 'light' | 'dark' | 'system') || 'system'
+  })
 
   useEffect(() => {
     // 시스템 테마 감지
@@ -16,14 +43,11 @@ export default function ThemeToggle() {
       }
     }
 
-    // 초기 테마 설정
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | 'system' || 'system'
-    setTheme(savedTheme)
-
-    if (savedTheme === 'system') {
+    // 초기 테마 적용
+    if (theme === 'system') {
       updateTheme(mediaQuery.matches ? 'dark' : 'light')
     } else {
-      updateTheme(savedTheme)
+      updateTheme(theme)
     }
 
     mediaQuery.addEventListener('change', handleChange)
@@ -60,14 +84,7 @@ export default function ThemeToggle() {
         className={theme === 'light' ? 'text-pink-primary' : 'text-slate-500'}
         title="라이트 모드"
       >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-          />
-        </svg>
+        {LightIcon}
       </Button>
 
       <Button
@@ -77,14 +94,7 @@ export default function ThemeToggle() {
         className={theme === 'dark' ? 'text-pink-primary' : 'text-slate-500'}
         title="다크 모드"
       >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-          />
-        </svg>
+        {DarkIcon}
       </Button>
     </div>
   )
