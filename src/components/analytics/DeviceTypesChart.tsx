@@ -4,12 +4,14 @@ interface DeviceType {
   color: string
 }
 
+// 정적 데이터를 컴포넌트 외부로 호이스팅
+const devices: DeviceType[] = [
+  { name: 'Desktop', percentage: 55, color: 'bg-blue-500' },
+  { name: 'Mobile', percentage: 40, color: 'bg-pink-500' },
+  { name: 'Tablet', percentage: 5, color: 'bg-green-500' }
+]
+
 export default function DeviceTypesChart() {
-  const devices: DeviceType[] = [
-    { name: 'Desktop', percentage: 55, color: 'bg-blue-500' },
-    { name: 'Mobile', percentage: 40, color: 'bg-pink-500' },
-    { name: 'Tablet', percentage: 5, color: 'bg-green-500' }
-  ]
 
   return (
     <div className="bg-white border border-slate-200 rounded-lg p-6">
