@@ -1,5 +1,7 @@
 'use client'
 
+import { useMemo } from 'react'
+
 interface PaginationProps {
   currentPage: number
   totalPages: number
@@ -10,6 +12,12 @@ interface PaginationProps {
 export default function Pagination({ currentPage, totalPages, totalResults, onPageChange }: PaginationProps) {
   const startResult = (currentPage - 1) * 9 + 1
   const endResult = Math.min(currentPage * 9, totalResults)
+
+  // 페이지 번호 배열 메모이제이션 (totalPages 변경 시에만 재생성)
+  const pageNumbers = useMemo(
+    () => Array.from({ length: totalPages }, (_, i) => i + 1),
+    [totalPages]
+  )
 
   return (
     <div className="flex items-center justify-between">
@@ -34,7 +42,7 @@ export default function Pagination({ currentPage, totalPages, totalResults, onPa
 
         {/* Page Numbers */}
         <div className="flex items-center space-x-1">
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+          {pageNumbers.map((page) => (
             <button
               key={page}
               onClick={() => onPageChange(page)}
