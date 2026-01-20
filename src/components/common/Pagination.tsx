@@ -9,6 +9,19 @@ interface PaginationProps {
   onPageChange: (page: number) => void
 }
 
+// 정적 SVG 아이콘을 컴포넌트 외부로 호이스팅 (재생성 방지)
+const PrevIcon = (
+  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+  </svg>
+)
+
+const NextIcon = (
+  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+  </svg>
+)
+
 export default function Pagination({ currentPage, totalPages, totalResults, onPageChange }: PaginationProps) {
   const startResult = (currentPage - 1) * 9 + 1
   const endResult = Math.min(currentPage * 9, totalResults)
@@ -34,9 +47,7 @@ export default function Pagination({ currentPage, totalPages, totalResults, onPa
           disabled={currentPage === 1}
           className="flex items-center px-4 py-2 text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
-          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
+          {PrevIcon}
           Previous
         </button>
 
@@ -63,9 +74,7 @@ export default function Pagination({ currentPage, totalPages, totalResults, onPa
           className="flex items-center px-4 py-2 text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           Next
-          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          {NextIcon}
         </button>
       </div>
     </div>
