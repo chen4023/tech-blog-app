@@ -2,27 +2,35 @@
 
 import { useState } from 'react'
 
+// 정적 데이터를 컴포넌트 외부로 호이스팅
+const categories = [
+  { name: 'All', count: 12 },
+  { name: 'React', count: 2 },
+  { name: 'TypeScript', count: 1 },
+  { name: 'Node.js', count: 2 },
+  { name: 'CSS', count: 2 },
+  { name: 'JavaScript', count: 1 },
+  { name: 'Database', count: 1 },
+  { name: 'DevOps', count: 1 },
+  { name: 'UI/UX', count: 1 },
+  { name: 'Mobile', count: 1 }
+]
+
+const tags = [
+  'Architecture', 'Performance', 'Best Practices', 'Tutorial', 'Guide',
+  'Advanced', 'Beginner', 'Tools', 'Framework', 'API', 'Security', 'Testing'
+]
+
+// 검색 아이콘 호이스팅
+const SearchIcon = (
+  <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+  </svg>
+)
+
 export default function BlogSidebar() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
-
-  const categories = [
-    { name: 'All', count: 12, active: true },
-    { name: 'React', count: 2, active: false },
-    { name: 'TypeScript', count: 1, active: false },
-    { name: 'Node.js', count: 2, active: false },
-    { name: 'CSS', count: 2, active: false },
-    { name: 'JavaScript', count: 1, active: false },
-    { name: 'Database', count: 1, active: false },
-    { name: 'DevOps', count: 1, active: false },
-    { name: 'UI/UX', count: 1, active: false },
-    { name: 'Mobile', count: 1, active: false }
-  ]
-
-  const tags = [
-    'Architecture', 'Performance', 'Best Practices', 'Tutorial', 'Guide',
-    'Advanced', 'Beginner', 'Tools', 'Framework', 'API', 'Security', 'Testing'
-  ]
 
   return (
     <aside className="w-72 space-y-8">
@@ -38,9 +46,7 @@ export default function BlogSidebar() {
             className="w-full px-4 py-3 pl-10 pr-4 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
           />
           <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
-            <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
+            {SearchIcon}
           </div>
         </div>
       </div>
