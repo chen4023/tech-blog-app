@@ -12,8 +12,13 @@ export default function VisitorTrendsChart() {
     { day: 7, views: 320 }
   ]
 
-  const maxViews = Math.max(...chartData.map(d => d.views))
-  const minViews = Math.min(...chartData.map(d => d.views))
+  // 한 번의 순회로 최적화 (기존: 2번 순회)
+  let maxViews = -Infinity
+  let minViews = Infinity
+  for (const data of chartData) {
+    if (data.views > maxViews) maxViews = data.views
+    if (data.views < minViews) minViews = data.views
+  }
 
   return (
     <div className="bg-white border border-slate-200 rounded-lg p-6">
